@@ -1,6 +1,6 @@
 # Loja Econverse
 
-Projeto de uma página de loja feito com React, TypeScript, Vite e SCSS.
+Projeto de uma página de loja para desafio técnico feito com React, TypeScript, Vite e SCSS.
 
 ## Como rodar
 
