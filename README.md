@@ -1,75 +1,54 @@
-# React + TypeScript + Vite
+# Loja Econverse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto de uma página de loja feito com React, TypeScript, Vite e SCSS.
 
-Currently, two official plugins are available:
+## Como rodar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Instale as dependências e inicie o servidor de desenvolvimento:
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Para gerar a versão de produção:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run build
 ```
+
+## Estrutura
+
+```text
+src/
+├── App.tsx
+├── App.css
+├── index.css
+├── main.tsx
+├── assets/
+├── components/
+│   ├── banner/
+│   ├── brands/
+│   ├── footer/
+│   ├── header/
+│   ├── navigationCards/
+│   ├── newsletter/
+│   ├── partnerCards/
+│   └── products/
+└── interfaces/
+public/
+└── Products.json
+```
+
+## Componentes
+
+- **Header**: cabeçalho com informações de compra, logo, busca, ícones e navegação.
+- **Banner**: banner da promoção principal.
+- **NavigationCard**: atalhos para as categorias da loja.
+- **Products**: carrossel de produtos carregados de `public/Products.json`, com botões de navegação e popup de compra. A propriedade `info` define se aparece a barra de categorias (`1`) ou o texto “Ver Todos” (outro valor).
+- **PartnerCard**: cards de destaque dos parceiros.
+- **Brands**: seção para navegar pelas marcas.
+- **Newsletter**: formulário de inscrição na newsletter.
+- **Footer**: logo, links institucionais e redes sociais.
+
+Cada componente tem seu próprio arquivo SCSS na respectiva pasta. Os estilos globais ficam em `src/index.css` e `src/App.css`.

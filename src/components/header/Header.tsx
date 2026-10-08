@@ -1,4 +1,4 @@
-import Logo from "../../assets/HeaderAssets/Logo.png";
+import Logo from "../../assets/GeralAssets/Logo.png";
 import Lupa from "../../assets/HeaderAssets/lupa.png";
 import Heart from "../../assets/HeaderAssets/heart.png";
 import ShoppingCart from "../../assets/HeaderAssets/ShoppingCart.png";
